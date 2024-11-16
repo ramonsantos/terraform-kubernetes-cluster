@@ -24,4 +24,12 @@ resource "aws_subnet" "lt_subnet_private_1b" {
   )
 }
 
+resource "aws_route_table_association" "lt_private_subnet_1a_association" {
+  subnet_id      = aws_subnet.lt_subnet_private_1a.id
+  route_table_id = aws_route_table.lt_private_route_table_1a.id
+}
 
+resource "aws_route_table_association" "lt_private_subnet_1b_association" {
+  subnet_id      = aws_subnet.lt_subnet_private_1b.id
+  route_table_id = aws_route_table.lt_private_route_table_1b.id
+}
