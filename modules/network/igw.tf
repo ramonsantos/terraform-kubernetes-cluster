@@ -2,7 +2,7 @@ resource "aws_internet_gateway" "lt_igw" {
   vpc_id = aws_vpc.lt_vpc.id
 
   tags = merge(
-    local.tags,
+    var.tags,
     {
       Name = "${var.project_name}-igw"
     }
