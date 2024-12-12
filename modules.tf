@@ -12,3 +12,12 @@ module "lt_eks_cluster" {
   public_subnet_1a  = module.lt_network.public_subnet_1a
   plublic_subnet_1b = module.lt_network.public_subnet_1b
 }
+
+module "lt_eks_managed_node_group" {
+  source            = "./modules/managed-node-group"
+  project_name      = var.project_name
+  cluster_name      = module.lt_eks_cluster.cluster_name
+  private_subnet_1a = module.lt_network.private_subnet_1a
+  private_subnet_1b = module.lt_network.private_subnet_1b
+  tags              = local.tags
+}
