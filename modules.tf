@@ -21,3 +21,11 @@ module "lt_eks_managed_node_group" {
   private_subnet_1b = module.lt_network.private_subnet_1b
   tags              = local.tags
 }
+
+module "lt_eks_controller_policy" {
+  source       = "./modules/aws-load-balancer-controller"
+  project_name = var.project_name
+  tags         = local.tags
+  oidc         = module.lt_eks_cluster.oidc
+  cluster_name = module.lt_eks_cluster.cluster_name
+}
