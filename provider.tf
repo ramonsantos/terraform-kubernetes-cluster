@@ -17,7 +17,6 @@ terraform {
     bucket = "terraform-state-ax21"
     key    = "terraform.tfstate"
     region = "us-east-1"
-
   }
 }
 
