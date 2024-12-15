@@ -16,10 +16,10 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_kc_eks_cluster"></a> [lt\_eks\_cluster](#module\_lt\_eks\_cluster) | ./modules/cluster | n/a |
-| <a name="module_kc_eks_controller_policy"></a> [lt\_eks\_controller\_policy](#module\_lt\_eks\_controller\_policy) | ./modules/aws-load-balancer-controller | n/a |
-| <a name="module_kc_eks_managed_node_group"></a> [lt\_eks\_managed\_node\_group](#module\_lt\_eks\_managed\_node\_group) | ./modules/managed-node-group | n/a |
-| <a name="module_kc_network"></a> [lt\_network](#module\_lt\_network) | ./modules/network | n/a |
+| <a name="module_kc_eks_cluster"></a> [kc\_eks\_cluster](#module\_kc\_eks\_cluster) | ./modules/cluster | n/a |
+| <a name="module_kc_eks_controller_policy"></a> [kc\_eks\_controller\_policy](#module\_kc\_eks\_controller\_policy) | ./modules/aws-load-balancer-controller | n/a |
+| <a name="module_kc_eks_managed_node_group"></a> [kc\_eks\_managed\_node\_group](#module\_kc\_eks\_managed\_node\_group) | ./modules/managed-node-group | n/a |
+| <a name="module_kc_network"></a> [kc\_network](#module\_kc\_network) | ./modules/network | n/a |
 
 ## Resources
 
@@ -29,12 +29,11 @@ No resources.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_cidr_block"></a> [cidr\_block](#input\_cidr\_block) | Value of the CIDR block | `string` | n/a | yes |
-| <a name="input_project_name"></a> [project\_name](#input\_project\_name) | Name of the project | `string` | n/a | yes |
+| <a name="input_cidr_block"></a> [cidr\_block](#input\_cidr\_block) | Value of the CIDR block | `string` | `"10.0.0.0/16"` | no |
+| <a name="input_project_name"></a> [project\_name](#input\_project\_name) | Name of the project | `string` | `"terraform-kubernetes-cluster"` | no |
+| <a name="input_region"></a> [region](#input\_region) | AWS region | `string` | `"us-east-1"` | no |
 
 ## Outputs
 
-| Name | Description |
-|------|-------------|
-| <a name="output_oidc"></a> [oidc](#output\_oidc) | n/a |
+No outputs.
 <!-- END_TF_DOCS -->
