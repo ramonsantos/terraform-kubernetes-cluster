@@ -1,4 +1,4 @@
-resource "aws_iam_role" "lt_eks_controller_role" {
+resource "aws_iam_role" "kc_eks_controller_role" {
   name = "${var.project_name}-eks-load-balancer-controller-role"
 
   assume_role_policy = <<EOF
@@ -22,7 +22,6 @@ resource "aws_iam_role" "lt_eks_controller_role" {
     }
   EOF
 
-
   tags = merge(
     var.tags,
     {
@@ -31,7 +30,7 @@ resource "aws_iam_role" "lt_eks_controller_role" {
   )
 }
 
-resource "aws_iam_role_policy_attachment" "lt_eks_controller_role_attachment" {
-  role       = aws_iam_role.lt_eks_controller_role.name
-  policy_arn = aws_iam_policy.lt_eks_controller_policy.arn
+resource "aws_iam_role_policy_attachment" "kc_eks_controller_role_attachment" {
+  role       = aws_iam_role.kc_eks_controller_role.name
+  policy_arn = aws_iam_policy.kc_eks_controller_policy.arn
 }

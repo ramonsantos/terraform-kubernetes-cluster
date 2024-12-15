@@ -1,4 +1,4 @@
-resource "aws_iam_role" "lt_eks_cluster_role" {
+resource "aws_iam_role" "kc_eks_cluster_role" {
   name = "${var.project_name}-eks-cluster-role"
 
   assume_role_policy = jsonencode({
@@ -23,7 +23,7 @@ resource "aws_iam_role" "lt_eks_cluster_role" {
   )
 }
 
-resource "aws_iam_role_policy_attachment" "lt_eks_cluster_role_attachment" {
-  role       = aws_iam_role.lt_eks_cluster_role.name
+resource "aws_iam_role_policy_attachment" "kc_eks_cluster_role_attachment" {
+  role       = aws_iam_role.kc_eks_cluster_role.name
   policy_arn = "arn:aws:iam::aws:policy/AmazonEKSClusterPolicy"
 }

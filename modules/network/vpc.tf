@@ -1,4 +1,4 @@
-resource "aws_vpc" "lt_vpc" {
+resource "aws_vpc" "kc_vpc" {
   cidr_block           = var.cidr_block
   enable_dns_support   = true
   enable_dns_hostnames = true

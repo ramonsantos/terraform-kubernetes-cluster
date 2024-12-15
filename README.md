@@ -16,10 +16,10 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_lt_eks_cluster"></a> [lt\_eks\_cluster](#module\_lt\_eks\_cluster) | ./modules/cluster | n/a |
-| <a name="module_lt_eks_controller_policy"></a> [lt\_eks\_controller\_policy](#module\_lt\_eks\_controller\_policy) | ./modules/aws-load-balancer-controller | n/a |
-| <a name="module_lt_eks_managed_node_group"></a> [lt\_eks\_managed\_node\_group](#module\_lt\_eks\_managed\_node\_group) | ./modules/managed-node-group | n/a |
-| <a name="module_lt_network"></a> [lt\_network](#module\_lt\_network) | ./modules/network | n/a |
+| <a name="module_kc_eks_cluster"></a> [lt\_eks\_cluster](#module\_lt\_eks\_cluster) | ./modules/cluster | n/a |
+| <a name="module_kc_eks_controller_policy"></a> [lt\_eks\_controller\_policy](#module\_lt\_eks\_controller\_policy) | ./modules/aws-load-balancer-controller | n/a |
+| <a name="module_kc_eks_managed_node_group"></a> [lt\_eks\_managed\_node\_group](#module\_lt\_eks\_managed\_node\_group) | ./modules/managed-node-group | n/a |
+| <a name="module_kc_network"></a> [lt\_network](#module\_lt\_network) | ./modules/network | n/a |
 
 ## Resources
 

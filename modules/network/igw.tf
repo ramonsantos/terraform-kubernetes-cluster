@@ -1,5 +1,5 @@
-resource "aws_internet_gateway" "lt_igw" {
-  vpc_id = aws_vpc.lt_vpc.id
+resource "aws_internet_gateway" "kc_igw" {
+  vpc_id = aws_vpc.kc_vpc.id
 
   tags = merge(
     var.tags,
@@ -9,12 +9,12 @@ resource "aws_internet_gateway" "lt_igw" {
   )
 }
 
-resource "aws_route_table" "lt_public_route_table" {
-  vpc_id = aws_vpc.lt_vpc.id
+resource "aws_route_table" "kc_public_route_table" {
+  vpc_id = aws_vpc.kc_vpc.id
 
   route {
     cidr_block = "0.0.0.0/0"
-    gateway_id = aws_internet_gateway.lt_igw.id
+    gateway_id = aws_internet_gateway.kc_igw.id
   }
 
   tags = {

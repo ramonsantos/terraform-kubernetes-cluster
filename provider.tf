@@ -14,33 +14,33 @@ terraform {
     }
   }
   backend "s3" {
-    bucket = "terraform-state-ax21"
+    bucket = "rsnc"
     key    = "terraform.tfstate"
     region = "us-east-1"
   }
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region = var.region
 }
 
 provider "kubernetes" {
-  host                   = module.lt_eks_cluster.endpoint
-  cluster_ca_certificate = base64decode(module.lt_eks_cluster.certificate_authority)
+  host                   = module.kc_eks_cluster.endpoint
+  cluster_ca_certificate = base64decode(module.kc_eks_cluster.certificate_authority)
   exec {
     api_version = "client.authentication.k8s.io/v1beta1"
-    args        = ["eks", "get-token", "--cluster-name", module.lt_eks_cluster.cluster_name]
+    args        = ["eks", "get-token", "--cluster-name", module.kc_eks_cluster.cluster_name]
     command     = "aws"
   }
 }
 
 provider "helm" {
   kubernetes {
-    host                   = module.lt_eks_cluster.endpoint
-    cluster_ca_certificate = base64decode(module.lt_eks_cluster.certificate_authority)
+    host                   = module.kc_eks_cluster.endpoint
+    cluster_ca_certificate = base64decode(module.kc_eks_cluster.certificate_authority)
     exec {
       api_version = "client.authentication.k8s.io/v1beta1"
-      args        = ["eks", "get-token", "--cluster-name", module.lt_eks_cluster.cluster_name]
+      args        = ["eks", "get-token", "--cluster-name", module.kc_eks_cluster.cluster_name]
       command     = "aws"
     }
   }

@@ -1,4 +1,4 @@
-resource "aws_security_group_rule" "lt_eks_cluster_sg_rule" {
+resource "aws_security_group_rule" "kc_eks_cluster_sg_rule" {
   type      = "ingress"
   from_port = 443
   to_port   = 443
@@ -6,5 +6,5 @@ resource "aws_security_group_rule" "lt_eks_cluster_sg_rule" {
   cidr_blocks = [
     "0.0.0.0/0"
   ]
-  security_group_id = aws_eks_cluster.lt_eks_cluster.vpc_config[0].cluster_security_group_id
+  security_group_id = aws_eks_cluster.kc_eks_cluster.vpc_config[0].cluster_security_group_id
 }

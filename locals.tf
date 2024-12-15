@@ -1,5 +1,5 @@
 locals {
   tags = {
-    Project = "learning-terraform"
+    Project = "Terraform Kubernetes Cluster"
   }
 }
